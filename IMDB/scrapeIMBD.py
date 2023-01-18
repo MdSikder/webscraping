@@ -19,7 +19,6 @@ try:
     movies = soup.find('tbody', class_="lister-list").find_all('tr')  # when need specific the use (_) with class
 
     # print(len(movies))
-
     for movie in movies:
         name = movie.find('td', class_="titleColumn").a.text
         # print(name)
@@ -33,6 +32,7 @@ try:
         rating = movie.find('td', class_="ratingColumn imdbRating").strong.text
         # print(rating)
 
+        # print(rank, name, year, rating)
         print(rank, name, year, rating)
         sheet.append([rank, name, year, rating])
 
